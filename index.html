@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Skycast: current weather and a 7-day forecast for any city, with saved favourites." />
+    <title>Skycast | Weather for any city</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="root"><p id="boot" style="font-family:system-ui,sans-serif;padding:24px">Loading Skycast…</p></div>
+    <script>
+      // If the app crashes on start, show the reason on the page instead of a blank screen.
+      window.addEventListener("error", function (e) {
+        var boot = document.getElementById("boot");
+        if (boot) boot.textContent = "Skycast could not start: " + e.message;
+      });
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
